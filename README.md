@@ -10,17 +10,15 @@ Two instances of the app run as **Alice** and **Bob**, communicating over TCP/IP
 The GUI provides **Connect, Start, Stop, Disconnect** buttons, and a log window to display the protocol in action.
 
 
----
-
 ## ⚙️ Prerequisites
 - macOS or Linux  
 - [Homebrew](https://brew.sh/) (for dependencies)  
 - Install dependencies:
-  ```bash
+  
+```bash
   brew install cmake qt cryptopp
 ````
 
----
 
 ## 🔨 Build Instructions
 
@@ -88,7 +86,6 @@ cd lamport-auth
 
 3. Start Alice (client).
 
----
 
 ## 📝 Example Logs
 
@@ -127,8 +124,11 @@ For final submission, include:
 
 ## 👩‍💻 Authors
 
-* *Add group members’ names here*
+### Swarup Narkhede (IIT2023168)
+### Atharva Narkhede (IIT2023153)
+### Arpit Anand (IIT2023170)
+### Snehal Gupta (IIT2023169)
+### Darshan Nagre (IIT2023206)
 
-```
 
-```
+

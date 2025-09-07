@@ -1,0 +1,10 @@
+{
+  "role": "Bob",
+  "local_ip": "127.0.0.1",
+  "local_port": 5001,
+  "peer_ip": "127.0.0.1",
+  "peer_port": 5000,
+  "sleep_ms": 1000,
+  "n": 100,
+  "bob_h0_file": "bob_h0.txt"
+}

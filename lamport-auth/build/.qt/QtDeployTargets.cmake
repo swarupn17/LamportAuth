@@ -1,0 +1,4 @@
+set(__QT_DEPLOY_TARGET_lamport_app_FILE /Users/swarup/LamportAuth/lamport-auth/build/lamport_app)
+set(__QT_DEPLOY_TARGET_lamport_app_TYPE EXECUTABLE)
+set(__QT_DEPLOY_TARGET_config_test_FILE /Users/swarup/LamportAuth/lamport-auth/build/config_test)
+set(__QT_DEPLOY_TARGET_config_test_TYPE EXECUTABLE)

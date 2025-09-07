@@ -1,0 +1,24 @@
+#include <QCoreApplication>
+#include <QDebug>
+#include "ConfigManager.h"
+
+int main(int argc, char** argv)
+{
+    QCoreApplication a(argc, argv);
+
+    ConfigManager cfg;
+    if (!cfg.load("config_alice.json")) {
+        qWarning() << "Failed to load config:" << cfg.lastError();
+        return 1;
+    }
+    qDebug() << "Role:" << cfg.role();
+    qDebug() << "Local:" << cfg.localIp() << ":" << cfg.localPort();
+    qDebug() << "Peer:" << cfg.peerIp() << ":" << cfg.peerPort();
+    qDebug() << "n:" << cfg.n() << "sleep_ms:" << cfg.sleepMs();
+    qDebug() << "alice_hn_file:" << cfg.aliceHnFile();
+    qDebug() << "bob_h0_file:" << cfg.bobH0File();
+    qDebug() << "alice hn content:" << cfg.readAliceHn();
+    qDebug() << "bob h0 content:" << cfg.readBobH0();
+
+    return 0;
+}

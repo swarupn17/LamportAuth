@@ -1,0 +1,10 @@
+{
+  "role": "Alice",
+  "local_ip": "127.0.0.1",
+  "local_port": 5000,
+  "peer_ip": "127.0.0.1",
+  "peer_port": 5001,
+  "sleep_ms": 1000,
+  "n": 100,
+  "alice_hn_file": "alice_hn.txt"
+}

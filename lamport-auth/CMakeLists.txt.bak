@@ -1,0 +1,47 @@
+cmake_minimum_required(VERSION 3.16)
+project(lamport_auth_demo LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Adjust this if you're using Qt5: find_package(Qt5 COMPONENTS Core REQUIRED)
+find_package(Qt6 COMPONENTS Core REQUIRED)
+
+# include dirs
+include_directories(${CMAKE_SOURCE_DIR}/src)
+
+# Add the config_test executable
+add_executable(config_test
+    tests/config_test.cpp
+    src/util/ConfigManager.cpp
+)
+
+# Link Qt Core
+target_link_libraries(config_test PRIVATE Qt6::Core)
+
+# If you need to point to Homebrew Qt (optional), uncomment and adjust:
+# set(Qt6_DIR "/opt/homebrew/opt/qt/lib/cmake/Qt6")
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTORCC ON)
+
+find_package(Qt6 COMPONENTS Widgets Core Network REQUIRED)
+
+add_executable(lamport_app
+    src/main.cpp
+    src/gui/MainWindow.cpp
+    src/gui/mainwindow.ui
+    src/network/NetworkManager.cpp
+    src/app/Controller.cpp
+    src/crypto/LamportChain.cpp
+    src/util/ConfigManager.cpp
+)
+
+target_include_directories(lamport_app PRIVATE src)
+target_link_libraries(lamport_app PRIVATE Qt6::Widgets Qt6::Core Qt6::Network)
+
+add_executable(config_test tests/config_test.cpp
+    src/util/ConfigManager.cpp
+)
+target_include_directories(config_test PRIVATE src src/util)
+target_link_libraries(config_test PRIVATE Qt6::Core)

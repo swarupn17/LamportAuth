@@ -1,7 +1,7 @@
 # LamportAuth
 This is the Cybersecurity Course Project based on Lamport's Authentication.
 
-```markdown
+
 # Lamport Authentication Demo (Qt + Crypto++)
 
 This project demonstrates **Lamport’s one-way hash chain based authentication protocol** using a desktop application built in **C++17**, **Qt6 (Widgets + Networking)**, and **Crypto++**.
@@ -12,7 +12,7 @@ The GUI provides **Connect, Start, Stop, Disconnect** buttons, and a log window 
 ---
 
 ## 📂 Project Structure
-```
+
 
 lamport-auth/
 ├── src/
@@ -30,7 +30,7 @@ lamport-auth/
 ├── bob\_h0.txt                   # Bob’s stored seed (h0)
 └── README.md
 
-````
+
 
 ---
 

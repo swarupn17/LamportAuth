@@ -9,28 +9,6 @@ This project demonstrates **Lamport’s one-way hash chain based authentication 
 Two instances of the app run as **Alice** and **Bob**, communicating over TCP/IP using challenge–response.  
 The GUI provides **Connect, Start, Stop, Disconnect** buttons, and a log window to display the protocol in action.
 
----
-
-## 📂 Project Structure
-
-
-lamport-auth/
-├── src/
-│   ├── app/Controller.\*         # Protocol controller (Alice/Bob logic)
-│   ├── crypto/LamportChain.\*    # Hash chain utilities (Crypto++)
-│   ├── gui/MainWindow.\*         # GUI logic
-│   ├── gui/mainwindow\.ui        # Qt Designer UI file
-│   ├── network/NetworkManager.\* # TCP networking wrapper
-│   ├── util/ConfigManager.\*     # JSON config loader
-│   └── main.cpp                 # Qt app entrypoint
-├── tools/gen\_chain/             # Hash chain generator (creates h0, hn)
-├── config\_alice.json            # Config for Alice
-├── config\_bob.json              # Config for Bob
-├── alice\_hn.txt                 # Alice’s stored hash (hn)
-├── bob\_h0.txt                   # Bob’s stored seed (h0)
-└── README.md
-
-
 
 ---
 

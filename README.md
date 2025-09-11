@@ -1,7 +1,3 @@
-# LamportAuth
-This is the Cybersecurity Course Project based on Lamport's Authentication.
-
-
 # Lamport Authentication Demo (Qt + Crypto++)
 
 This project demonstrates **Lamport’s one-way hash chain based authentication protocol** using a desktop application built in **C++17**, **Qt6 (Widgets + Networking)**, and **Crypto++**.
@@ -11,18 +7,32 @@ The GUI provides **Connect, Start, Stop, Disconnect** buttons, and a log window 
 
 
 ## ⚙️ Prerequisites
-- macOS or Linux  
-- [Homebrew](https://brew.sh/) (for dependencies)  
-- Install dependencies:
-  
+
+### macOS
+
+* Ensure [Homebrew](https://brew.sh/) is installed.
+* Install required dependencies:
+
 ```bash
-  brew install cmake qt cryptopp
-````
+brew install cmake qt cryptopp
+```
+
+### Linux (Debian/Ubuntu-based)
+
+* Update package list and install required packages:
+
+```bash
+sudo apt update
+sudo apt install clang cmake qtbase5-dev libcrypto++-dev libqt6core6 libqt6gui6 libqt6widgets6 qt6-base-dev build-essential
+```
+
 
 
 ## 🔨 Build Instructions
 
 From the project root:
+
+### macOS
 
 ```bash
 rm -rf build
@@ -33,11 +43,24 @@ cmake -DCMAKE_CXX_COMPILER=clang++ -DQt6_DIR=$(brew --prefix)/opt/qt/lib/cmake/Q
 cmake --build . -- -j$(sysctl -n hw.ncpu)
 ```
 
-The app will be built as:
+### Linux
+
+```bash
+rm -rf build
+mkdir build
+cd build
+
+cmake -DCMAKE_CXX_COMPILER=clang++ -DQt6_DIR=/usr/lib/x86_64-linux-gnu/cmake/Qt6 ..
+cmake --build . -- -j$(nproc)
+```
+
+The app will be built at:
 
 ```
 build/lamport_app
 ```
+
+
 
 ---
 
@@ -129,6 +152,5 @@ For final submission, include:
 ### Arpit Anand (IIT2023170)
 ### Snehal Gupta (IIT2023169)
 ### Darshan Nagre (IIT2023206)
-
 
 

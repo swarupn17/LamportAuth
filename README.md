@@ -26,6 +26,105 @@ sudo apt update
 sudo apt install clang cmake qtbase5-dev libcrypto++-dev libqt6core6 libqt6gui6 libqt6widgets6 qt6-base-dev build-essential
 ```
 
+## Gen Chain Tool
+
+This tool generates an initial hash chain from a given random seed and chain length using **Crypto++**.
+
+### 📦 Prerequisites
+
+* A C++17 compatible compiler (`clang++` or `g++`)
+* [Crypto++](https://www.cryptopp.com/) library installed on your system
+
+---
+
+### 🖥️ macOS (with Homebrew)
+
+1. Install Crypto++ via Homebrew (if not already installed):
+
+   ```bash
+   brew install cryptopp
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd tools/gen_chain
+   ```
+
+3. Compile the program:
+
+   ```bash
+   PREFIX=$(brew --prefix)
+
+   clang++ -std=c++17 gen_chain.cpp -I${PREFIX}/include -L${PREFIX}/lib -lcryptopp -o gen_chain \
+     -Wl,-search_paths_first -Wl,-headerpad_max_install_names
+   ```
+
+4. Run the program:
+
+   ```bash
+   ./gen_chain "random_seed_123" 100
+   ```
+
+---
+
+### 🐧 Linux (Ubuntu/Debian/Fedora etc.)
+
+1. Install Crypto++ development libraries:
+
+   **Ubuntu/Debian**
+
+   ```bash
+   sudo apt-get update
+   sudo apt-get install libcrypto++-dev libcrypto++-doc libcrypto++-utils
+   ```
+
+   **Fedora/RHEL**
+
+   ```bash
+   sudo dnf install cryptopp cryptopp-devel
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd tools/gen_chain
+   ```
+
+3. Compile the program:
+
+   ```bash
+   g++ -std=c++17 gen_chain.cpp -lcryptopp -o gen_chain
+   ```
+
+   *(If Crypto++ is in a custom path, add `-I<include_path> -L<lib_path>` as needed.)*
+
+4. Run the program:
+
+   ```bash
+   ./gen_chain "random_seed_123" 100
+   ```
+
+---
+
+### ⚙️ Usage
+
+```bash
+./gen_chain <seed_string> <chain_length>
+```
+
+* `<seed_string>` → Any random string to start the chain
+* `<chain_length>` → Number of hash links to generate
+
+**Example:**
+
+```bash
+./gen_chain "my_secret_seed" 100
+```
+
+---
+
+👉 Output will display the generated hash chain based on the given seed.
 
 
 ## 🔨 Build Instructions
